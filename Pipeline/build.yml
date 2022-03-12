@@ -1,0 +1,15 @@
+trigger: 
+  - main
+
+pool:
+ vmImage: "windows-latest"
+
+stages:
+- stage: terraform
+  jobs:
+  - job: terraform
+    steps:
+    - task: TerraformInstaller@0
+      inputs:
+        terraformVersion: 'latest'
+        
